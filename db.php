@@ -1,12 +1,13 @@
 <?php
-$host = getenv("DB_HOST") ?: "localhost";
-$user = getenv("DB_USER") ?: "root";
-$pass = getenv("DB_PASS") ?: "";
-$db   = getenv("DB_NAME") ?: "clothstore_db";
+$host = "shortline.proxy.rlwy.net";
+$port = "32927";
+$user = "root";
+$pass = "YOUR_REAL_PASSWORD";
+$db   = "railway";
 
-$conn = new mysqli($host, $user, $pass, $db);
+$conn = new mysqli($host, $user, $pass, $db, $port);
 
 if ($conn->connect_error) {
-    die("Database connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 ?>
