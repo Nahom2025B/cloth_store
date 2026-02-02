@@ -1,11 +1,11 @@
 <?php
-$host = "shortline.proxy.rlwy.net";
-$user = "root";
-$password = "YOUR_REAL_PASSWORD";  // copy EXACT from Railway
-$database = "railway";
-$port = 32927;
+$host = getenv("MYSQLHOST");
+$user = getenv("MYSQLUSER");
+$pass = getenv("MYSQLPASSWORD");
+$db   = getenv("MYSQLDATABASE");
+$port = getenv("MYSQLPORT");
 
-$conn = new mysqli($host, $user, $password, $database, $port);
+$conn = new mysqli($host, $user, $pass, $db, $port);
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
